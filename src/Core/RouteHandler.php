@@ -22,7 +22,7 @@ class RouteHandler
             return self::routeHandlerNotFound();
         }
         $controller = new $controller;
-        return $controller->$method($vars, $request);
+        return $controller->$method($request, $vars);
     }
 
     /**

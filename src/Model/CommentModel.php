@@ -7,6 +7,7 @@ use App\Core\BaseModel;
 
 class CommentModel extends BaseModel
 {
+    // TODO delete
     protected $table = 'comment';
 
     /**

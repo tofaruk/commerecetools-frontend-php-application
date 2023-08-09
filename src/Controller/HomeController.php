@@ -8,7 +8,7 @@ use App\Core\View;
 
 class HomeController extends BaseController
 {
-    public function indexAction($prams = [], Request $request)
+    public function indexAction(Request $request, $prams = [])
     {
         return View::render();
     }

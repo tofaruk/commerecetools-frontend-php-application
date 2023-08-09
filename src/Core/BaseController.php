@@ -13,5 +13,5 @@ abstract class BaseController
      * @param \App\Core\Request $request
      * @return mixed
      */
-    abstract public function indexAction($params = [], Request $request);
+    abstract public function indexAction(Request $request, $params = []);
 }

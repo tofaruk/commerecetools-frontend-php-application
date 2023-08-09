@@ -7,6 +7,7 @@ use App\Core\BaseModel;
 
 class PostModel extends BaseModel
 {
+    // TODO delete
     protected $table = 'post';
 
     /**

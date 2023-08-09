@@ -1,0 +1,70 @@
+{% extends "layout.html.twig" %}
+{% block content %}
+    <h2>Product</h2>
+    {% if product %}
+        <div class="product-details">
+            <div class="product-image">
+                <img width="400" src="{{ product.masterVariant.images[0].url }}" alt="{{ product.name['en-US'] }}" alt="{{ product.name['en-US'] }}">
+            </div>
+            <div class="product-info">
+                <h1>{{ product.name['en-US'] }}</h1>
+                <p class="price">{{ product.masterVariant.prices[0].value.centAmount /100 }}</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+
+    {% endif %}
+
+
+    <style>
+
+        /* Style the product image */
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        /* Style the product info */
+        .product-info {
+            margin-left: 20px;
+            max-width: 400px;
+        }
+
+        /* Style the product name */
+        .product-info h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        /* Style the price */
+        .price {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #e44d26;
+        }
+
+        /* Style the description */
+        .description {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        /* Style the "Add to Cart" button */
+        .add-to-cart {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            background-color: #0056b3;
+        }
+    </style>
+{% endblock %}

@@ -6,6 +6,7 @@ use Faker\Factory as FakerFactory;
 
 class PostFaker
 {
+    // TODO delete
     protected $faker = null;
 
     public function __construct()

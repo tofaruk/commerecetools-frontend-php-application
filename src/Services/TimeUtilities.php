@@ -5,6 +5,8 @@ namespace App\Services;
 
 class TimeUtilities
 {
+    // @info used in AppExtension
+    // TODO  delete
     public function convertToTimeAgo($datetime, $full = false)
     {
         $now = new \DateTime();

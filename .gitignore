@@ -2,3 +2,4 @@
 .idea/
 var/
 /config/config.php
+/data/

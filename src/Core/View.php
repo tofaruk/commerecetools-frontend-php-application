@@ -63,8 +63,7 @@ class View
     private function getTemplateName()
     {
         $trace = debug_backtrace();
-      //  var_dump($trace);
-        $controller = str_replace(ConfigConstants::APP_CONTROLLER_SUFFIX,null,$this->getControllerName($trace));
+        $controller = str_replace(ConfigConstants::APP_CONTROLLER_SUFFIX,'',$this->getControllerName($trace));
         $method = $this->getControllerMethodName($trace);
         return sprintf("%s/%s", $controller, $method);
     }

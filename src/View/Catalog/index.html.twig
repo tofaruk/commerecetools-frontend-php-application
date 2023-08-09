@@ -1,0 +1,53 @@
+{% extends "layout.html.twig" %}
+{% block content %}
+    <h2>Catalog</h2>
+    {% if products %}
+
+        <div class="product-list">
+            {% for product in products %}
+                <div class="product">
+                    <a href="{{ base_url('/catalog/product') }}/{{ product.id }}"> <img src="{{ product.masterVariant.images[0].url }}" alt="{{ product.name['en-US'] }}"> </a>
+                    <h2><a href="{{ base_url('/catalog/product') }}/{{ product.id }}">{{ product.name['en-US'] }}</a></h2>
+                    <p>Price: {{ product.masterVariant.prices[0].value.centAmount /100 }}</p>
+                </div>
+            {% endfor %}
+        </div>
+
+    {% endif %}
+
+
+    <style>
+        /* Style the product list container */
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Style each product item */
+        .product {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            width: 200px;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .product h2 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .product p {
+            font-size: 16px;
+        }
+    </style>
+{% endblock %}

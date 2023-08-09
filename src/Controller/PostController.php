@@ -11,6 +11,7 @@ use App\Model\PostModel;
 
 class PostController extends BaseController
 {
+    // TODO delete
     /** @var PostModel|null */
     private $model = null;
 

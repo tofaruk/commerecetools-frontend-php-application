@@ -21,11 +21,9 @@ class Routes
 
         });
 
-
-        $r->addGroup('/fake', function (RouteCollector $r) {
-            $r->addRoute('GET', '', 'App\Controller\FakerController::indexAction');
-            $r->addRoute('GET', '/post/add', 'App\Controller\FakerController::addPostAction');
-            $r->addRoute('GET', '/comment/add', 'App\Controller\FakerController::addCommentAction');
+        $r->addGroup('/catalog', function (RouteCollector $r) {
+            $r->addRoute('GET', '', 'App\Controller\CatalogController::indexAction');
+            $r->addRoute('GET', '/product/{slug:[a-zA-Z0-9-]+}', 'App\Controller\CatalogController::productAction');
         });
     }
 }
